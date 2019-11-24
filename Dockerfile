@@ -1,4 +1,6 @@
 FROM alpine:3.10.3
+MAINTAINER Jerrico Gamis <jecklgamis@gmail.com>
+
 RUN apk update && apk add --no-cache bash curl dumb-init
 RUN apk update && apk add --no-cache python3
 RUN pip3 install --upgrade pip

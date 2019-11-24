@@ -1,6 +1,6 @@
 ## flask-example-app
 
-An example Flask app using Python 3 and Docker.
+An example Flask app using Python 3 and Docker image based on Alpine.
 
 ## Building Docker Image
 ```
