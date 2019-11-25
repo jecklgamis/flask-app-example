@@ -37,7 +37,7 @@ make smoke-tests
 ```
 
 ## Customizing This Skeleton
-* Change all references of `flask-example-app` to suite your project name
+* Change all references of `flask-example-app` to suit your project name
 * Provide your own server certificates (`server.key` and `server.crt`) if need be
 * Add more tests in `smoke-test.py` if need be
 * Change WSGI server in `docker-entrypoint.sh` if need be
