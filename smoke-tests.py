@@ -14,7 +14,7 @@ class SmokeTests(unittest.TestCase):
         SmokeTests.init()
 
     def testEndPointsExist(self):
-        log.info("Ensuring endpoints exists")
+        log.info("Ensuring endpoints exist")
         self.assertEqual(SmokeTests.get("https://localhost:8443/").status_code, 200)
         self.assertEqual(SmokeTests.get("https://localhost:8443/server_info").status_code, 200)
         self.assertEqual(SmokeTests.get("https://localhost:8443/api").status_code, 200)
