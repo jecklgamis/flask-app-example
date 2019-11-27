@@ -14,7 +14,7 @@ run-bash:
 run:
 	 @docker run -p 8443:8443 -it $(IMAGE_NAME):$(IMAGE_TAG)
 
-all : unit-tests dist image
+all : dist unit-tests image
 up: all run
 
 run-dev-mode:
