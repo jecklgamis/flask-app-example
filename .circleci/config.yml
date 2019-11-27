@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.4
+    working_directory: ~/flask-example-app
+    steps:
+      - checkout:
+      - run: pip install -r requirements.txt
+      - run: make all
