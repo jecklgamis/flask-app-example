@@ -1,4 +1,6 @@
-## flask-example-app
+## flask-example-app 
+
+[![CircleCI](https://circleci.com/gh/jecklgamis/flask-example-app.svg?style=svg)](https://circleci.com/gh/jecklgamis/flask-example-app)
 
 An example Flask app using Python 3.
 
