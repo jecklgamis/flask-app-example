@@ -14,14 +14,17 @@ run-bash:
 run:
 	 @docker run -p 8443:8443 -it $(IMAGE_NAME):$(IMAGE_TAG)
 
-all : dist unit-tests image
+all : dist tests image
 up: all run
 
-run-dev-mode:
+install-deps:
+	 @pip3 install -r requirements.txt
+run-app-dev-mode:
 	 @./run-app-dev-mode.sh
-run-dev-mode-ssl:
+run-app-dev-mode-ssl:
 	 @./run-app-dev-mode.sh ssl
 smoke-tests:
 	 @./smoke-tests.py
-unit-tests:
+.PHONY: tests
+tests:
 	 pytest -s
