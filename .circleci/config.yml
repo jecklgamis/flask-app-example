@@ -20,7 +20,7 @@ jobs:
           name: Run tests
           command: |
             . venv/bin/activate
-            make dist unit-tests
+            make dist tests
       - save_cache:
           paths:
             - ./venv
