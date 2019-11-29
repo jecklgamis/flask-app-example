@@ -13,11 +13,10 @@ What's in the box?
 * Flask tests (under `tests` directory) using `pytest` and a `smoke-tests.py` for basic endpoint testing
 
 ## Preparing Your Environment
-* Ensure [Python 3](https://www.python.org/downloads/) is installed
-* Ensure [Docker](https://www.docker.com/) is installed
-* Ensure [GNU Make](https://www.gnu.org/software/make/) is installed.
+* Ensure [Python 3](https://www.python.org/downloads/), [Docker](https://www.docker.com/), and 
+[GNU Make](https://www.gnu.org/software/make/) are installed
 
-Install Python dependencies
+Install Python dependencies:
 ```
 make install-deps
 ```
