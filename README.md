@@ -1,6 +1,6 @@
-## flask-example-app 
+## flask-example-app
 
-[![CircleCI](https://circleci.com/gh/jecklgamis/flask-example-app.svg?style=svg)](https://circleci.com/gh/jecklgamis/flask-example-app)
+[![Build](https://github.com/jecklgamis/flask-example-app/actions/workflows/build.yml/badge.svg)](https://github.com/jecklgamis/flask-example-app/actions/workflows/build.yml)
 
 An example Flask app using Python 3 and Docker. This is a fairly complete template if you want to bootstrap a REST 
 API server quickly.
