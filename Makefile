@@ -19,6 +19,7 @@ up: all run
 
 install-deps:
 	 @pip3 install -r requirements.txt
+	 @pip3 install -r requirements-dev.txt
 run-app-dev-mode:
 	 @./run-app-dev-mode.sh
 run-app-dev-mode-ssl:
