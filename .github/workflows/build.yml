@@ -25,6 +25,6 @@ jobs:
           ./generate-ssl-certs.sh
           ./generate-server-info.sh
       - name: Test with pytest
-          run: |
-            pytest
+        run: |
+          pytest
 
