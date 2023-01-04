@@ -2,7 +2,7 @@ def test_index(client):
     response = client.get("/")
     data = response.get_json()
     assert "flask-example-app" == data["name"]
-    assert "It works in my machine!" == data["message"]
+    assert "It works on my machine!" == data["message"]
 
 
 def test_server_info(client):

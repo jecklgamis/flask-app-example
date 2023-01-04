@@ -1,5 +1,5 @@
 IMAGE_NAME:=jecklgamis/flask-example-app
-IMAGE_TAG:=latest
+IMAGE_TAG:=main
 
 default:
 	echo $(IMAGE_TAG)
@@ -9,10 +9,10 @@ dist:
 	 @./generate-server-info.sh
 image:
 	 docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
-run-bash:
+run-shell:
 	 @docker run -i -t $(IMAGE_NAME):$(IMAGE_TAG) /bin/bash
 run:
-	 @docker run -p 8443:8443 -it $(IMAGE_NAME):$(IMAGE_TAG)
+	 @docker run -p 8443:8443 -p 8080:8080 -it $(IMAGE_NAME):$(IMAGE_TAG)
 
 all : dist tests image
 up: all run
