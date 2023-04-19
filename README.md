@@ -5,6 +5,9 @@
 An example Flask app using Python 3 and Docker. This is a fairly complete template if you want to bootstrap a REST 
 API server quickly.
 
+Docker : `docker run -p 8080:8080 -it jecklgamis/flask-example-app:main`
+
+
 What's in the box? 
 * Alpine Linux based Docker image
 * SSL/TLS listener
