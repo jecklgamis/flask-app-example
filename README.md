@@ -1,11 +1,11 @@
-## flask-example-app
+## flask-app-example
 
-[![Build](https://github.com/jecklgamis/flask-example-app/actions/workflows/build.yml/badge.svg)](https://github.com/jecklgamis/flask-example-app/actions/workflows/build.yml)
+[![Build](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml/badge.svg)](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml)
 
 An example Flask app using Python 3 and Docker. This is a fairly complete template if you want to bootstrap a REST 
 API server quickly.
 
-Docker : `docker run -p 8080:8080 -it jecklgamis/flask-example-app:main`
+Docker : `docker run -p 8080:8080 -it jecklgamis/flask-app-example:main`
 
 
 What's in the box? 
@@ -54,7 +54,7 @@ make smoke-tests
 ```
 
 ## Customizing This Template
-* Change all references of `flask-example-app` to suit your project name
+* Change all references of `flask-app-example` to suit your project name
 * Provide your own server certificates (`server.key` and `server.crt`)
 * Add more tests in `smoke-test.py` 
 

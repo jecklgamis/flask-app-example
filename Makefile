@@ -1,4 +1,4 @@
-IMAGE_NAME:=jecklgamis/flask-example-app
+IMAGE_NAME:=jecklgamis/flask-app-example
 IMAGE_TAG:=main
 
 default:

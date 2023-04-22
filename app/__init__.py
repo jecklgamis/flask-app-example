@@ -8,7 +8,7 @@ from app import api, root
 
 
 def configure_logging():
-    file_handler = logging.FileHandler(filename='flask-example-app.log')
+    file_handler = logging.FileHandler(filename='flask-app-example.log')
     stdout_handler = logging.StreamHandler(sys.stdout)
     logging.basicConfig(level=logging.INFO,
                         format='[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s',

@@ -9,7 +9,7 @@ from flask import jsonify
 
 @bp.route('/', methods=['GET'])
 def index():
-    return jsonify({"name": "flask-example-app", "message": "It works on my machine!"})
+    return jsonify({"name": "flask-app-example", "message": "It works on my machine!"})
 
 
 @bp.route('/server_info', methods=['GET'])
