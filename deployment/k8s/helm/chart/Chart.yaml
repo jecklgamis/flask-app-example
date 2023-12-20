@@ -1,6 +1,6 @@
 apiVersion: v2
 name: flask-app-example
-description: An example Spring Boot app using Kotlin
+description: A Flask example
 
 # A chart can be either an 'application' or a 'library' chart.
 #
