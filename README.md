@@ -2,14 +2,13 @@
 
 [![Build](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml/badge.svg)](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml)
 
-An example Flask app using Python 3 and Docker. This is a fairly complete template if you want to bootstrap a REST 
-API server quickly.
+An example Flask app using Python 3 and Docker.
 
 Docker : `docker run -p 8080:8080 -it jecklgamis/flask-app-example:main`
 
+What's in the box?
 
-What's in the box? 
-* Alpine Linux based Docker image
+* Ubuntu Linux based Docker image
 * SSL/TLS listener
 * Modular route handlers using [Flask Blueprints](https://flask.palletsprojects.com/en/1.1.x/blueprints/) 
 * [Gunicorn](https://gunicorn.org) WSGI server
@@ -52,11 +51,6 @@ make run-app-dev-mode-ssl
 ```
 make smoke-tests
 ```
-
-## Customizing This Template
-* Change all references of `flask-app-example` to suit your project name
-* Provide your own server certificates (`server.key` and `server.crt`)
-* Add more tests in `smoke-test.py` 
 
 ## Contributing
 Please raise issue or pull request. Thanks for contributing!
