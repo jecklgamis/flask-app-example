@@ -1,8 +1,7 @@
-FROM alpine:3.17
+FROM ubuntu:22.04
 MAINTAINER Jerrico Gamis <jecklgamis@gmail.com>
 
-RUN apk update && apk add --no-cache bash curl dumb-init
-RUN apk update && apk add --no-cache python3 py3-pip
+RUN apt update -y && apt install -y curl dumb-init python3 python3-pip && rm -rf /var/lib/apt/lists/*
 RUN pip3 install --upgrade pip
 
 COPY requirements.txt /
