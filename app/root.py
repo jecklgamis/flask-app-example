@@ -2,9 +2,9 @@ import io
 import json
 
 from flask import Blueprint
+from flask import jsonify
 
 bp = Blueprint('/', __name__, url_prefix='/')
-from flask import jsonify
 
 
 @bp.route('/', methods=['GET'])

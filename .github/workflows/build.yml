@@ -2,7 +2,11 @@ name: Build
 on:
   push:
     branches: [ main ]
-    pull_request:
+    tags:
+      - v*
+  pull_request:
+    types: [ opened, reopened ]
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest

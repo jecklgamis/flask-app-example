@@ -4,7 +4,7 @@ import sys
 
 from flask import Flask
 
-from app import api, root
+from app import api, root, probe
 
 
 def configure_logging():
@@ -29,4 +29,5 @@ def create_app():
 
     app.register_blueprint(api.bp)
     app.register_blueprint(root.bp)
+    app.register_blueprint(probe.bp)
     return app
