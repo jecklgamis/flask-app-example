@@ -12,7 +12,7 @@ def index():
     return jsonify({"name": "flask-app-example", "message": "It works on my machine!"})
 
 
-@bp.route('/server_info', methods=['GET'])
-def server_info():
-    info = json.loads(io.open('server_info.json').read())
+@bp.route('/build-info', methods=['GET'])
+def build_info():
+    info = json.loads(io.open('build-info.json').read())
     return jsonify(info)
