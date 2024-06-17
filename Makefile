@@ -1,31 +1,29 @@
-IMAGE_NAME:=jecklgamis/flask-app-example
-IMAGE_TAG:=main
+IMAGE_NAME:=flask-app-example
+IMAGE_TAG:=$(shell git rev-parse --abbrev-ref HEAD)
 
 default:
-	echo $(IMAGE_TAG)
-	cat ./Makefile
-dist:
-	 @./generate-ssl-certs.sh
-	 @./generate-server-info.sh
-image:
-	 docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
-run-shell:
-	 @docker run -i -t $(IMAGE_NAME):$(IMAGE_TAG) /bin/bash
-run:
-	 @docker run -p 8443:8443 -p 8080:8080 -it $(IMAGE_NAME):$(IMAGE_TAG)
-
-all : dist tests image
-up: all run
-
+	@cat ./Makefile
 install-deps:
 	 @pip3 install -r requirements.txt
-	 @pip3 install -r requirements-dev.txt
-run-app-dev-mode:
-	 @./run-app-dev-mode.sh
-run-app-dev-mode-ssl:
-	 @./run-app-dev-mode.sh ssl
-smoke-tests:
+build:
+	 @./generate-ssl-certs.sh
+	 @./generate-build-info.sh
+image:
+	 docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
+run:
+	 @docker run -p 8080:8080 -p 8443:8443  -it $(IMAGE_NAME):$(IMAGE_TAG)
+run-shell:
+	 @docker run -it $(IMAGE_NAME):$(IMAGE_TAG) /bin/bash
+exec-shell:
+	docker exec -it `docker ps | grep $(IMAGE_NAME) | awk '{print $$1}'` /bin/bash
+all: build check image
+up: all run
+run-smoke-tests:
 	 @./smoke-tests.py
-.PHONY: tests
-tests:
-	 pytest -s
+check:
+	 @pytest -s
+clean:
+	@find . -name build-info.json | xargs rm -f
+	@find . -name server.key | xargs rm -f
+	@find . -name server.crt | xargs rm -f
+	@find . -name *.log| xargs rm -f

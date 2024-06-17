@@ -2,35 +2,38 @@
 
 [![Build](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml/badge.svg)](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml)
 
-An example Flask app using Python 3 and Docker.
+An example Flask app.
 
 Docker : `docker run -p 8080:8080 -it jecklgamis/flask-app-example:main`
 
-What's in the box?
+## What's In The Box?
 
-* Ubuntu Linux based Docker image
-* SSL/TLS listener
-* Modular route handlers using [Flask Blueprints](https://flask.palletsprojects.com/en/1.1.x/blueprints/) 
+* Ubuntu Docker image
 * [Gunicorn](https://gunicorn.org) WSGI server
-* Flask tests (under `tests` directory) using `pytest` and a `smoke-tests.py` for basic endpoint testing
+* Build info, liveness and readiness probes
+* PyTest unit tests
+* HTTP/HTTPS listeners
 
-## Preparing Your Environment
-* Ensure [Python 3](https://www.python.org/downloads/), [Docker](https://www.docker.com/), and 
-[GNU Make](https://www.gnu.org/software/make/) are installed
+## Requirements
 
-Install Python dependencies:
-```
-make install-deps
-```
-## Building 
-To build the app:
+* Python 3
+* Docker
+* Make
+
+## Building
+
+Run `make install-deps` or `pip install -r requirements.txt` to install Python dependencies
+
+## Building
+
+Build Docker image
 ```
 make all 
 ```
 This  does a couple of things:
 * It generates self-signed SSL certificates (`server.key` and `server.crt`)
-* It generates `server_info.json` that is served by the `/server_info` endpoint
-* It runs tests using `pytest`
+* It generates `build-info.json` that is served by the `/build-info` endpoint
+* It runs tests
 * It generates a Docker image
 
 Explore the `Makefile` for details.
@@ -42,9 +45,9 @@ make run
 ```
 
 To run the app directly without using Docker:
+
 ```
-make run-app-dev-mode
-make run-app-dev-mode-ssl
+flask run --host 0.0.0.0 --port 8080
 ```
 
 ## Testing The EndPoints
@@ -53,6 +56,7 @@ make smoke-tests
 ```
 
 ## Contributing
-Please raise issue or pull request. Thanks for contributing!
+
+Please raise issue or pull request.
 
 Have fun!

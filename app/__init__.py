@@ -18,16 +18,16 @@ def configure_logging():
 def create_app():
     configure_logging()
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY=os.urandom(16)
-    )
+    app.config.from_mapping(SECRET_KEY=os.urandom(16))
     app.config.from_pyfile('config.py', silent=True)
     try:
         os.makedirs(app.instance_path)
     except OSError as e:
         pass
-
     app.register_blueprint(api.bp)
     app.register_blueprint(root.bp)
     app.register_blueprint(probe.bp)
     return app
+
+
+app = create_app()
