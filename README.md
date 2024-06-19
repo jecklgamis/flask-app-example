@@ -18,13 +18,13 @@ Docker : `docker run -p 8080:8080 -it jecklgamis/flask-app-example:main`
 
 * Python 3
 * Docker
-* Make
+* Make (optional)
 
 ## Building
-
-Run `make install-deps` or `pip install -r requirements.txt` to install Python dependencies
-
-## Building
+Install dependencies
+```
+make install-deps
+```
 
 Build Docker image
 ```
@@ -45,12 +45,12 @@ make run
 ```
 
 To run the app directly without using Docker:
-
 ```
 flask run --host 0.0.0.0 --port 8080
 ```
 
 ## Testing The EndPoints
+Ensure the app is running.
 ```
 make smoke-tests
 ```
