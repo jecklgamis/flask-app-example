@@ -16,7 +16,7 @@ docker run -p 8080:8080 -it jecklgamis/flask-app-example:main
 * Build info, liveness and readiness probe endpoints
 * PyTest unit tests
 * HTTP/HTTPS listeners
-* Kubernetes Helm chart
+* Kubernetes deployment (Helm chart)
 
 ## Requirements
 * Python 3
