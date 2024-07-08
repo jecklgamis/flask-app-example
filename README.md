@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml/badge.svg)](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml)
 
-An example Flask app.
+An example webapp using Flask.
 
 Docker : `docker run -p 8080:8080 -it jecklgamis/flask-app-example:main`
 
@@ -10,49 +10,57 @@ Docker : `docker run -p 8080:8080 -it jecklgamis/flask-app-example:main`
 
 * Ubuntu Docker image
 * [Gunicorn](https://gunicorn.org) WSGI server
-* Build info, liveness and readiness probes
+* Build info, liveness and readiness probe endpoints
 * PyTest unit tests
 * HTTP/HTTPS listeners
+* Kubernetes Helm chart
 
 ## Requirements
-
 * Python 3
 * Docker
+* Helm 
 * Make (optional)
 
 ## Building
-Install dependencies
-```
-make install-deps
+
+Install dependencies (`make install-deps`)
+```bash
+pip install -r requirements.txt
 ```
 
-Build Docker image
-```
-make all 
-```
-This  does a couple of things:
-* It generates self-signed SSL certificates (`server.key` and `server.crt`)
-* It generates `build-info.json` that is served by the `/build-info` endpoint
-* It runs tests
-* It generates a Docker image
-
-Explore the `Makefile` for details.
-
-## Running
-To run the app in Docker:
-```
-make run
+Build Docker image (`make all`)
+```bash
+./generate-ssl-certs.sh
+./generate-build-info.sh
+pytest -s
+docker build -t flask-app-example:main .  
 ```
 
-To run the app directly without using Docker:
+## Running 
+
+Run the app in Docker (`make run`)
+```bash
+docker run -it flask-app-example:main
 ```
+
+Run the app directly (`./run-app.sh`)
+```bash
+FLASK_DEBUG=true
 flask run --host 0.0.0.0 --port 8080
 ```
 
-## Testing The EndPoints
-Ensure the app is running.
+Run the app directly using HTTPS (`USE_SSL=true ./run-app.sh`)
+```bash
+FLASK_DEBUG=true
+flask run --cert  server.crt --key server.key --host 0.0.0.0 --port 8443
 ```
-make smoke-tests
+
+## Testing
+Ensure the app is running.
+
+Run some basic endpoint tests (`make smoke-tests`) 
+```bash
+./smoke-tests.py
 ```
 
 ## Contributing

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-USE_SSL=$1
-
 export FLASK_APP=app
 export FLASK_DEBUG=true
 
