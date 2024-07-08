@@ -59,15 +59,39 @@ flask run --cert  server.crt --key server.key --host 0.0.0.0 --port 8443
 ```
 
 ## Testing
-Ensure the app is running.
+Run unit tests
+```bash
+pytest
+```
 
-Run some basic endpoint tests (`make smoke-tests`) 
+Run some basic endpoint tests (`make smoke-tests`). Ensure the app is running.
 ```bash
 ./smoke-tests.py
 ```
 
+## Deploying
+* This assumes you can deploy to a Kubernetes cluster from your machine.
+* Ensure you have `helm` and `yq` installed.
+
+For all the operations below, change directory to `deployment/k8s/helm`.
+
+Create Helm chart (`make package`):
+```bash
+helm package ./chart
+```
+
+Install Helm chart (`make install`):
+```bash
+helm install flask-app-example flask-app-example-v1.0.0-rc.1.tgz
+```
+
+Delete Helm chart (`make uninstall`):
+```bash
+helm uninstall flask-app-example
+```
+
 ## Contributing
 
-Please raise issue or pull request.
+Please raise issue or pull request? Thanks.
 
 Have fun!
