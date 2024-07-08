@@ -4,7 +4,10 @@
 
 An example webapp using Flask.
 
-Docker : `docker run -p 8080:8080 -it jecklgamis/flask-app-example:main`
+Run example from Docker Hub:
+```bash 
+docker run -p 8080:8080 -it jecklgamis/flask-app-example:main
+```
 
 ## What's In The Box?
 
