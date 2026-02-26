@@ -1,6 +1,6 @@
 ## flask-app-example
 
-[![Build](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml/badge.svg)](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yml)
+[![Build](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yaml/badge.svg)](https://github.com/jecklgamis/flask-app-example/actions/workflows/build.yaml)
 
 An example webapp using Flask.
 
@@ -11,7 +11,7 @@ docker run -p 8080:8080 -it jecklgamis/flask-app-example:main
 
 ## What's In The Box?
 
-* Ubuntu Docker image
+* Ubuntu 24.04 Docker image
 * [Gunicorn](https://gunicorn.org) WSGI server
 * Build info, liveness and readiness probe endpoints
 * PyTest unit tests
@@ -19,7 +19,7 @@ docker run -p 8080:8080 -it jecklgamis/flask-app-example:main
 * Kubernetes deployment (Helm chart)
 
 ## Requirements
-* Python 3
+* Python 3.13
 * Docker
 * Helm 
 * Make (optional)
@@ -64,7 +64,7 @@ Run unit tests
 pytest
 ```
 
-Run some basic endpoint tests (`make smoke-tests`). Ensure the app is running.
+Run some basic endpoint tests (`make run-smoke-tests`). Ensure the app is running.
 ```bash
 ./smoke-tests.py
 ```
@@ -82,7 +82,7 @@ helm package ./chart
 
 Install Helm chart (`make install`):
 ```bash
-helm install flask-app-example flask-app-example-v1.0.0-rc.1.tgz
+helm install flask-app-example flask-app-example-1.0.0-rc.1.tgz
 ```
 
 Delete Helm chart (`make uninstall`):
