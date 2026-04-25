@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flask-app-example
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/jecklgamis/flask-app-example
+    targetRevision: main
+    path: deployment/k8s/helm/chart
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
