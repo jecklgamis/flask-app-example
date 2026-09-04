@@ -70,6 +70,6 @@ Tests use pytest with a shared Flask test client fixture defined in `tests/conft
 
 ## Deployment
 
-- **Docker:** Ubuntu 24.04 base, Python venv, Gunicorn WSGI server
+- **Docker:** Ubuntu 26.04 base, Python venv, Gunicorn WSGI server
 - **Kubernetes:** Helm chart in `deployment/k8s/helm/chart/` with nginx ingress, TLS via cert-manager, liveness/readiness probes
 - **CI/CD:** GitHub Actions workflow builds, tests, and pushes to Docker Hub on main branch

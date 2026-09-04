@@ -11,7 +11,7 @@ docker run -p 8080:8080 -it jecklgamis/flask-app-example:main
 
 ## What's In The Box?
 
-* Ubuntu 24.04 Docker image
+* Ubuntu 26.04 Docker image
 * [Gunicorn](https://gunicorn.org) WSGI server
 * Build info, liveness and readiness probe endpoints
 * PyTest unit tests
@@ -19,7 +19,7 @@ docker run -p 8080:8080 -it jecklgamis/flask-app-example:main
 * Kubernetes deployment (Helm chart)
 
 ## Requirements
-* Python 3.13
+* Python 3.14
 * Docker
 * Helm 
 * Make (optional)

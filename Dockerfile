@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 LABEL org.opencontainers.image.authors="jecklgamis@gmail.com"
 
 RUN apt update -y && apt install -y curl dumb-init python3 python3-venv python3-pip && rm -rf /var/lib/apt/lists/*
